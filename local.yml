@@ -1,0 +1,6 @@
+- hosts: localhost
+  become: true
+  tasks:
+    # - import_tasks: tasks/zsh.yml
+    # - import_tasks: tasks/putdotfile.yml
+    - import_tasks: tasks/tmux.yml

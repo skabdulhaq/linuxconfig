@@ -1,0 +1,8 @@
+- name: Install stow
+  apt: name=stow
+- name: get dotfiles from github
+  ansible.builtin.git:
+    repo: 'git@github.com:skabdulhaq/dotfiles.git'
+    dest: "~/dotfiles"
+- name: create simlinks
+  shell: chdir={{lookup('env', 'HOME')}}/dotfiles stow ./ -t ~/

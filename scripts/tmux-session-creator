@@ -6,6 +6,6 @@ session_name=`basename "$session" | tr "." "_"`;
 if ! tmux has-session -t "$session_name" 2>/dev/null; then
     tmux new-session -ds "$session_name" -c "$session";
 fi
-if tmux switch-client -t "$session_name"; then
+if ! tmux switch-client -t "$session_name"; then
     tmux attach -t "$session_name";
 fi

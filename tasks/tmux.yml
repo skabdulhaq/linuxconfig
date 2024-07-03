@@ -3,5 +3,4 @@
 - name: Install zsh
   apt: name=fzf
 - name: copy session script to bin
-  shell: chdir={{lookup('env', 'HOME')}}/linuxconfig stow ./ -t /bin/ && stow ./ -t /usr/bin && stow ./ -t /usr/sbin
-  
+  shell: chdir={{lookup('env', 'HOME')}}/linuxconfig/scripts stow ./ -t /bin/ && stow ./ -t /usr/bin && stow ./ -t /usr/sbin
